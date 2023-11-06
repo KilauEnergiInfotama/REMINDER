@@ -2,12 +2,8 @@ version:  1.0.2
 
 services:
   app:
-    container_name: nodejs_app
+    container_name: nodejs_terminal_app
     build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
     depends_on:
       - db
     networks:
@@ -16,14 +12,11 @@ services:
   db:
     container_name: mysql_db
     image: mysql
-    restart: always
     environment:
       MYSQL_DATABASE: 'aaa'
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
-    ports:
-      - "3306:3306"
     volumes:
       - db-data:/var/lib/mysql
     networks:

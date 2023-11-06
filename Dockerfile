@@ -1,21 +1,18 @@
-# Use the official Node.js 16 image.
-# https://hub.docker.com/_/node
-FROM node:18
+# Use the official Node.js image.
+FROM node:16
 
 # Create app directory
 WORKDIR /usr/src/app
 
 # Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# If you are building your code for production
-# RUN npm ci --only=production
+# Install dependencies
 RUN npm install
 
 # Bundle app source
 COPY . .
 
-EXPOSE 3000
-CMD [ "node", "app.js" ]
+# Set the command to run your app using Node.js
+CMD [ "node", "index.js" ]
