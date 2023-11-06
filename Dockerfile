@@ -1,18 +1,18 @@
-# Use the official Node.js image.
-FROM node:16
+FROM node:21.1.0
 
 # Create app directory
 WORKDIR /usr/src/app
 
 # Install app dependencies
-# Copy package.json and package-lock.json
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
 COPY package*.json ./
 
-# Install dependencies
 RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
 
-# Set the command to run your app using Node.js
 CMD [ "node", "index.js" ]
