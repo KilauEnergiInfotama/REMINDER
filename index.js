@@ -18,7 +18,7 @@ axiosRetry(axios, {
 });
 const { Sequelize} = require('sequelize');
 const sequelize = new Sequelize({
-  host: 'host.docker.internal', // or your specific IP address
+  host: 'localhost', // or your specific IP address
   database: 'a',
   username: 'root',
   password: '',
