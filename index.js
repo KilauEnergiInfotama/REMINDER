@@ -21,7 +21,7 @@ const sequelize = new Sequelize({
   host: 'db', // use the service name defined in docker-compose.yml
   database: 'a',
   username: 'root',
-  password: 'yourpassword',
+  password: 'mana123',
   dialect: 'mysql'
 });
 
