@@ -11,12 +11,14 @@ services:
 
   db:
     container_name: mysql_db
-    image: mysql
+    image: mysql:8.0.30
     environment:
-      MYSQL_DATABASE: 'aaa'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'a'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: ''
+    ports:
+      - "3306:3306"
     volumes:
       - db-data:/var/lib/mysql
     networks:
