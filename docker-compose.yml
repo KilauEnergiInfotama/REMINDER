@@ -7,10 +7,11 @@ services:
       - .:/usr/src/app
     environment:
       - NODE_ENV=production
+      - DB_HOST=localhost  # or the name of your db service if you're using a separate container for it
+      - DB_DATABASE=a
+      - DB_USERNAME=root
+      - DB_PASSWORD=  # replace 'my-secret-pw' with your root password
     ports:
       - "3000:3000"
-    network_mode: "host"  
+    network_mode: "host"
 
-
-volumes:
-  db_data:
