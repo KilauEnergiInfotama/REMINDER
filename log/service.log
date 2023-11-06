@@ -1,0 +1,202 @@
+{
+  level: 'error',
+  tanggal: '231031',
+  jam: '21:56:21',
+  service: 'Service Started',
+  message: "ERROR Get Email From APIError: Access denied for user 'root'@'localhost' (using password: NO)",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-10-31T14:56:21.447Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:44:57',
+  service: 'Service Started',
+  message: "ERROR Get Email From APIError: Access denied for user 'root'@'localhost' (using password: NO)",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:44:57.873Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:50:37',
+  service: 'Service Started',
+  message: "ERROR Get Email From APIError: Access denied for user 'root'@'localhost' (using password: NO)",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:50:37.539Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:51:19',
+  service: 'Service Started',
+  message: "ERROR Get Email From APITypeError: Cannot read properties of undefined (reading 'data')",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:51:19.209Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:51:50',
+  service: 'Service Started',
+  message: "ERROR Get Email From APITypeError: Cannot read properties of undefined (reading 'data')",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:51:50.064Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:52:10',
+  service: 'Service Started',
+  message: "ERROR Get Email From APITypeError: Cannot read properties of undefined (reading 'data')",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:52:10.309Z'
+}
+{
+  level: 'info',
+  tanggal: '231103_(jam_16)',
+  jam: '16:52:31',
+  service: 'Service Started',
+  message: 'Get Email From API',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:52:32.758Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:52:32',
+  service: 'Service Started',
+  message: "ERROR Get Email From APITypeError: Cannot read properties of undefined (reading 'jmlberhasil')",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:52:32.784Z'
+}
+{
+  level: 'info',
+  tanggal: '231103_(jam_16)',
+  jam: '16:55:13',
+  service: 'Service Started',
+  message: 'Get Email From API',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:55:13.566Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:55:13',
+  service: 'Service Started',
+  message: "ERROR Get Email From APITypeError: Cannot read properties of undefined (reading 'jmlberhasil')",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:55:13.636Z'
+}
+{
+  level: 'info',
+  tanggal: '231103_(jam_16)',
+  jam: '16:55:47',
+  service: 'Service Started',
+  message: 'Get Email From API',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:55:47.482Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '16:55:47',
+  service: 'Service Started',
+  message: "ERROR Get Email From APITypeError: Cannot read properties of undefined (reading 'jmlberhasil')",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T09:55:47.551Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '17:04:49',
+  service: 'Service Started',
+  message: 'ERROR Get Email From APIReferenceError: createTableIfNotExists is not defined',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T10:04:49.266Z'
+}
+{
+  level: 'error',
+  tanggal: '231103',
+  jam: '17:05:24',
+  service: 'Service Started',
+  message: 'ERROR Get Email From APIReferenceError: createtable is not defined',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T10:05:24.058Z'
+}
+{
+  level: 'info',
+  tanggal: '231103_(jam_17)',
+  jam: '17:05:37',
+  service: 'Service Started',
+  message: 'Get Email From API',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T10:05:41.840Z'
+}
+{
+  level: 'info',
+  tanggal: '231103_(jam_17)',
+  jam: '17:05:37',
+  service: 'Success',
+  message: 'Succes Get Email From API',
+  jumlah: 87,
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-03T10:05:42.253Z'
+}
+{
+  level: 'info',
+  tanggal: '231106_(jam_11)',
+  jam: '11:53:07',
+  service: 'Service Started',
+  message: 'Get Email From API',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-06T04:53:16.269Z'
+}
+{
+  level: 'error',
+  tanggal: '231106',
+  jam: '11:53:16',
+  service: 'Service Started',
+  message: "ERROR Get Email From APITypeError: Cannot read properties of undefined (reading 'jmlberhasil')",
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-06T04:53:16.274Z'
+}
+{
+  level: 'info',
+  tanggal: '231106_(jam_11)',
+  jam: '11:53:38',
+  service: 'Service Started',
+  message: 'Get Email From API',
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-06T04:53:38.194Z'
+}
+{
+  level: 'info',
+  tanggal: '231106_(jam_11)',
+  jam: '11:53:38',
+  service: 'Success',
+  message: 'Succes Get Email From API',
+  jumlah: 2793,
+  app: 'Reminder app',
+  label: undefined,
+  timestamp: '2023-11-06T04:54:02.091Z'
+}
