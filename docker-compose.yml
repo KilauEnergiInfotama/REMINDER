@@ -6,8 +6,8 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=yourpassword
-      - MYSQL_DATABASE=yourdatabase
+      - MYSQL_ROOT_PASSWORD=mana123
+      - MYSQL_DATABASE=a
     ports:
       - "3306:3306"
 
