@@ -2,9 +2,10 @@ version:  1.0.2
 
 services:
   app:
-    container_name: nodejs_terminal_app
     build: .
-    depends_on:
-      - db
-    networks:
-      - app-network
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000" # or any ports that your app uses
