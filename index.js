@@ -18,11 +18,11 @@ axiosRetry(axios, {
 });
 const { Sequelize} = require('sequelize');
 const sequelize = new Sequelize({
-  host : "localhost",
-  database : "aaa",
-  username : "root",
-  password : "",
-  dialect : "mysql"
+  host: "db", // Use the service name defined in docker-compose
+  database: "aaa",
+  username: "user",
+  password: "password",
+  dialect: "mysql"
 });
 
 const { Model, DataTypes } = require('sequelize');
