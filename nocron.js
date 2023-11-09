@@ -284,67 +284,6 @@ async function getData() {
         });
     }
 }
-async function getDataFromFile() {
-    try {
-        var date = format("yyMMdd_(jam_hh)", new Date());
-        const data = await fs.readFileSync('./data_json/data_reminder_' + date + '.json');
-        return JSON.parse(data);
-    } catch (e) { }
-}
-
-async function getAllDataFromJSONFiles(directoryPath) {
-    try {
-      const jsonFiles = fs.readdirSync(directoryPath); // Get all JSON files in the directory
-      const allData = [];
-  
-      for (const file of jsonFiles) {
-        if (file.endsWith('.json')) {
-          const filePath = path.join(directoryPath, file);
-          const data = fs.readFileSync(filePath, 'utf8');
-          const jsonData = JSON.parse(data);
-          allData.push(jsonData);
-        }
-      }
-  
-      return allData;
-    } catch (e) {
-      console.error('Error reading JSON files:', e);
-      throw e;
-    }
-  }
-
-  
-async function startApp() {
-    try {
-        var date = format("yyMMdd_(jam_hh)", new Date());
-        var gettime = format('hh:mm:ss', new Date());
-        var tabledate = format("yyMM", new Date());
-
-        const jsonFilesDirectory = './data_json'; // Replace with the directory containing your JSON files
-        const allData = await getAllDataFromJSONFiles(jsonFilesDirectory);
-    
-        const data_email = allData;
-        for(i in data_email){
-
-        console.log(data_email)
-      //  await apiWaProgress('6287772488902,6282208225129,6283142622052,6285162772731',displayTimeWithEmoji(),data_email.length,data_email.length,estimasiWaktu(data_email.length))
-        loggerinfo(date, gettime)
-        const result = await insertData(data_email[i].data);
-        await sendEmail(data_email.length, result.jmlberhasil, result.jumlahdplkt);
-        //await apiWa('6287772488902,6282208225129,6283142622052,6285162772731', data_email.length, result.jmlberhasil, result.jumlahdplkt);
-        loggersucces(date, gettime, result.jmlberhasil);
-        }
-       // spinner.remove('service');
-    } catch (e) {
-        var date = format("yyMMdd", new Date());
-        var gettime = format('hh:mm:ss', new Date());
-        console.log(e)
-        spinner.fail('service', {
-            text: "terjadi kesalahan : " + e
-        });
-        loggererr(date, gettime, e)
-    }
-}
 
 
 axiosRetry(axios, {
@@ -447,9 +386,87 @@ async function sendEmail(jml, dtberhasil, duplikat, gagal) {
 
 
 
-const insertData = async (data_email) => {
-  const date = format("yyyyMMdd", new Date());
-  const tabledate = format("yyMM", new Date());
+async function getAllDataFromJSONFiles(directoryPath) {
+    try {
+      const jsonFiles = fs.readdirSync(directoryPath); // Get all JSON files in the directory
+      const allData = [];
+  
+      for (const file of jsonFiles) {
+        if (file.endsWith('.json')) {
+          const filePath = path.join(directoryPath, file);
+  
+          // Extract date from the file name using regular expressions
+          const fileNameRegex = /data_reminder_(\d{6})_\(\w+_(\d+)\)\.json/;
+          const match = fileNameRegex.exec(file);
+          if (!match) {
+            console.error('Invalid file name format:', file);
+            continue; // Skip invalid file names
+          }
+  
+          const fileDate = match[1];
+          const fileHour = match[2];
+  
+          const data = fs.readFileSync(filePath, 'utf8');
+          const jsonData = JSON.parse(data);
+  
+          // Add the file date and hour to the JSON data
+          jsonData.fileDate = fileDate;
+          jsonData.fileHour = fileHour;
+  
+          allData.push(jsonData);
+        }
+      }
+  
+      return allData;
+    } catch (e) {
+      console.error('Error reading JSON files:', e);
+      throw e;
+    }
+  }
+
+  
+  async function startApp() {
+            try {
+              const jsonFilesDirectory = './data_json'; // Replace with the directory containing your JSON files
+              const allData = await getAllDataFromJSONFiles(jsonFilesDirectory);
+          
+              for (const dataItem of allData) {
+                const { fileDate, fileHour } = dataItem;
+                console.log(fileDate)
+                const date = format("yyMMdd_(jam_hh)", new Date());
+
+      //  await apiWaProgress('6287772488902,6282208225129,6283142622052,6285162772731',displayTimeWithEmoji(),data_email.length,data_email.length,estimasiWaktu(data_email.length))
+        loggerinfo(date, gettime)
+        const result = await insertData(data_email[i].data,fileDate);
+      await sendEmail(data_email.length, result.jmlberhasil, result.jumlahdplkt);
+        //await apiWa('6287772488902,6282208225129,6283142622052,6285162772731', data_email.length, result.jmlberhasil, result.jumlahdplkt);
+        loggersucces(date, gettime, result.jmlberhasil);
+        }
+       // spinner.remove('service');
+    } catch (e) {
+        var date = format("yyMMdd", new Date());
+        var gettime = format('hh:mm:ss', new Date());
+        console.log(e)
+        spinner.fail('service', {
+            text: "terjadi kesalahan : " + e
+        });
+        loggererr(date, gettime, e)
+    }
+}
+
+
+axiosRetry(axios, {
+    retries: 10,
+    shouldResetTimeout: true,
+    retryCondition: (_error) => true // retry no matter what
+});
+
+
+
+
+const insertData = async (data_email,tgl) => {
+  const date = tgl;
+
   const flags = {}; // Object to keep track of flag value
 
   try {
