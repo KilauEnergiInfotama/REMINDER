@@ -362,11 +362,11 @@ async function startApp() {
         }
         const data = await getDataFromFile();
         const data_email = data.data;
-        await apiWaProgress('6287772488902,6282208225129,6283142622052,6285162772731',displayTimeWithEmoji(),data_email.length,data_email.length,estimasiWaktu(data_email.length))
+        //await apiWaProgress('6287772488902,6282208225129,6283142622052,6285162772731',displayTimeWithEmoji(),data_email.length,data_email.length,estimasiWaktu(data_email.length))
         loggerinfo(date, gettime)
         const result = await insertData(data_email);
         await sendEmail(data_email.length, result.jmlberhasil, result.jumlahdplkt);
-        await apiWa('6287772488902,6282208225129,6283142622052,6285162772731', data_email.length, result.jmlberhasil, result.jumlahdplkt);
+       // await apiWa('6287772488902,6282208225129,6283142622052,6285162772731', data_email.length, result.jmlberhasil, result.jumlahdplkt);
         loggersucces(date, gettime, result.jmlberhasil);
        // spinner.remove('service');
     } catch (e) {
