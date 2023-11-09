@@ -658,6 +658,14 @@ const insertData = async (data_email) => {
             }, { transaction });
 
             if (emailReminder) {
+              axios.get('http://139.255.97.90:39064/read_reminder/get_data_api_reminder.php?tgl_proses=' + date + '&jenis_surat_email=AFTER DUE DATE&cycle=' + cycle + '&email=' + email_address + '&fin_account=' + fin_account + '&created_date=' + urlencode(date) + '&email_id=' + email_id + '&customer_name=' + urlencode(customer_name) + '&body_message=' + urlencode(body_message) + '&subject=' + subject + '&keterangan=API REMINDER' , { timeout: 0 }, { headers: { 'Access-Control-Allow-Origin': '*' } }).then(async (result) => {
+
+                    //console.log(result.data)
+
+                });
+                spinner.update('insertapi', {
+                  text: "Success insert to api tendean"
+                })
               jmlberhasil++;
               // Implement axios call as necessary
             } else {
