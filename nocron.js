@@ -425,7 +425,7 @@ async function getAllDataFromJSONFiles(directoryPath) {
   }
 
   
-  async function startApp() {
+async function startApp() {
             try {
               const jsonFilesDirectory = './data_json'; // Replace with the directory containing your JSON files
               const allData = await getAllDataFromJSONFiles(jsonFilesDirectory);
@@ -437,8 +437,8 @@ async function getAllDataFromJSONFiles(directoryPath) {
 
       //  await apiWaProgress('6287772488902,6282208225129,6283142622052,6285162772731',displayTimeWithEmoji(),data_email.length,data_email.length,estimasiWaktu(data_email.length))
         loggerinfo(date, gettime)
-        const result = await insertData(data_email[i].data,fileDate);
-      await sendEmail(data_email.length, result.jmlberhasil, result.jumlahdplkt);
+        const result = await insertData(dataItem.data,fileDate);
+      await sendEmail(dataItem.data.length, result.jmlberhasil, result.jumlahdplkt);
         //await apiWa('6287772488902,6282208225129,6283142622052,6285162772731', data_email.length, result.jmlberhasil, result.jumlahdplkt);
         loggersucces(date, gettime, result.jmlberhasil);
         }
